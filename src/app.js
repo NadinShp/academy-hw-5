@@ -2,6 +2,7 @@ import refs from './js/refs';
 import apiServices from './js/apiServices';
 import getPokemonList from './js/pokemonList';
 import pokemonInfoMurkup from './js/pokemonInfoMurkup';
+import testInput from './js/testInput';
 
 refs.form.addEventListener('submit', onFormSubmit);
 
@@ -10,6 +11,10 @@ const pokemons = [];
 async function onFormSubmit(e) {
     e.preventDefault();
     const {value} = e.currentTarget.elements.query;
+    const validValue = testInput(value);
+    if(!validValue){
+        return;
+    }
     const [start, end] = value.split('-');
     pokemons.length = pokemons.length > 0 ?  0 : pokemons.length;
     refs.input.value = '';
