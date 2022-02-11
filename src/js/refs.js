@@ -5,5 +5,6 @@ const refs = {
     infoContainer: document.querySelector('.info-container'),
     input: document.querySelector('.input'),
     header: document.querySelector('.header'),
+    container: document.querySelector('.forNotifications'),
 };
 export default refs;

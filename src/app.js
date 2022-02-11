@@ -4,9 +4,9 @@ import getPokemonList from './js/pokemonList';
 import pokemonInfoMurkup from './js/pokemonInfoMurkup';
 import testInput from './js/testInput';
 import getRightPadding from './js/getRightPadding';
+import notification from './js/notification';
 
 let heightP = getRightPadding();
-console.log('heightP', heightP);
 refs.form.addEventListener('submit', onFormSubmit);
 const pokemons = [];
 
@@ -15,6 +15,7 @@ async function onFormSubmit(e) {
     const {value} = e.currentTarget.elements.query;
     const validValue = testInput(value);
     if(!validValue){
+        notification('Your enter is wrong. Try again.')
         return;
     }
     const [start, end] = value.split('-');
@@ -35,12 +36,12 @@ async function onFormSubmit(e) {
         if(pokemons.length === (end-start+1)){
             refs.galleryList.innerHTML = template;
             heightP = heightP + refs.galleryList.clientHeight;
-            console.log('heightP', heightP);
         }
         refs.galleryList.addEventListener('click', onClickItemGallery);
         }));
     } catch(error){
         console.log(error);
+        notification('Something is wrong. Try again.')
     }
 }
 
