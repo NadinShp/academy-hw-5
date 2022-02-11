@@ -4,5 +4,6 @@ const refs = {
     galeryItem: document.querySelector('.item-gallery'),
     infoContainer: document.querySelector('.info-container'),
     input: document.querySelector('.input'),
+    header: document.querySelector('.header'),
 };
 export default refs;

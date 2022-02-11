@@ -3,9 +3,11 @@ import apiServices from './js/apiServices';
 import getPokemonList from './js/pokemonList';
 import pokemonInfoMurkup from './js/pokemonInfoMurkup';
 import testInput from './js/testInput';
+import getRightPadding from './js/getRightPadding';
 
+let heightP = getRightPadding();
+console.log('heightP', heightP);
 refs.form.addEventListener('submit', onFormSubmit);
-
 const pokemons = [];
 
 async function onFormSubmit(e) {
@@ -32,6 +34,8 @@ async function onFormSubmit(e) {
         const template = getPokemonList(pokemons);
         if(pokemons.length === (end-start+1)){
             refs.galleryList.innerHTML = template;
+            heightP = heightP + refs.galleryList.clientHeight;
+            console.log('heightP', heightP);
         }
         refs.galleryList.addEventListener('click', onClickItemGallery);
         }));
@@ -46,5 +50,7 @@ function onClickItemGallery(e){
         let pokemon = pokemons.find(el=>+el.id===+id);
         const temp = pokemonInfoMurkup(pokemon);
         refs.infoContainer.innerHTML = temp;
+        heightP = heightP + refs.infoContainer.clientHeight;
+        window.scrollTo(0, heightP);
     }
 }

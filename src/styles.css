@@ -27,6 +27,14 @@ ul {
 header{
     background-color: rgb(65, 94, 122);
 }
+/* try to create fixed header  */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100px;
+}
 .container{
     width: 100%;
     margin: 0 auto;
@@ -109,6 +117,7 @@ header{
 }
 .info-container{
     padding-top: 15px;
+    padding-bottom: 25px;
 }
 .load {
     padding-top: 15px;
@@ -177,5 +186,11 @@ header{
         width: 1200px;
         padding-left: 15px;
         padding-right: 15px;
+    }
+    .item-gallery:nth-child(9n){
+        margin-right: 0;
+    }
+    .item-gallery{
+        width: calc(( 100% - 80px ) / 9);
     }
 }
