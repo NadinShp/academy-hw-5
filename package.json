@@ -1,0 +1,24 @@
+{
+  "name": "academy-hw-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NadinShp/academy-hw-5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NadinShp/academy-hw-5/issues"
+  },
+  "homepage": "https://github.com/NadinShp/academy-hw-5#readme",
+  "dependencies": {
+    "parcel": "^2.3.0"
+  }
+}
